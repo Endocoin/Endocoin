@@ -22,6 +22,18 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 #    BOOST_INCLUDE_PATH, BOOST_LIB_PATH, BDB_INCLUDE_PATH,
 #    BDB_LIB_PATH, OPENSSL_INCLUDE_PATH and OPENSSL_LIB_PATH respectively
 
+macx {
+#
+        BOOST_INCLUDE_PATH=/usr/local/opt/boost162/include
+        BOOST_LIB_PATH=/usr/local/opt/boost162/lib
+        BDB_INCLUDE_PATH=/usr/local/opt/berkeley-db@4/include
+        BDB_LIB_PATH=/usr/local/opt/berkeley-db@4/lib
+        OPENSSL_INCLUDE_PATH=/usr/local/opt/openssl/include
+        OPENSSL_LIB_PATH=/usr/local/opt/openssl/lib
+        MINIUPNPC_INCLUDE_PATH=/usr/local/opt/miniupnpc/include
+        MINIUPNPC_LIB_PATH=/usr/local/opt/miniupnpc/lib
+        
+        }
 OBJECTS_DIR = build
 MOC_DIR = build
 UI_DIR = build
@@ -405,7 +417,7 @@ macx:OBJECTIVE_SOURCES += src/qt/macdockiconhandler.mm src/qt/macnotificationhan
 macx:LIBS += -framework Foundation -framework ApplicationServices -framework AppKit
 macx:DEFINES += MAC_OSX MSG_NOSIGNAL=0
 macx:ICON = src/qt/res/icons/Endocoin.icns
-macx:TARGET = "ENDOTCoin-Qt"
+macx:TARGET = "endocoin-qt"
 macx:QMAKE_CFLAGS_THREAD += -pthread
 macx:QMAKE_LFLAGS_THREAD += -pthread
 macx:QMAKE_CXXFLAGS_THREAD += -pthread
